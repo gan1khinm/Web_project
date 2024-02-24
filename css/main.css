@@ -1,0 +1,186 @@
+.body {
+    /*background: url("img/gr.png")*/
+    background-color: black;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+}
+
+.head{
+    width: 34%;
+    height: 34%;
+    align-self: center;
+    margin-left: 17%;
+}
+
+.logo {
+    width: 8%;
+    height: 8%;
+}
+
+.menu {background-color: red;
+    width: 8%;
+    height: 8%;
+    margin-top: 3%;
+}
+
+.main {background-color: red;
+    width: 50%;
+    height: 90vh;
+    display: flex;
+
+    flex-direction: column; /* Делаем элементы располагаться вертикально */
+    align-items: center; /* Центрируем элементы по горизонтали */
+}
+footer {background-color: #333333;
+    margin-top: 5%;
+    padding: 2%;
+}
+
+footer section{
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer p {font: small-caps bold 20px sans-serif;
+    color: white;}
+
+.footer a {font: 15px sans-serif;
+    color: white}
+
+.footer img {
+    width: 4%;
+    height: 4%;
+    border-radius: 5px;
+}
+
+.registration {
+
+    position: absolute;
+    top: 2%;
+    right: 4%;
+    color: white;
+
+    font: small-caps bold 14px sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.video {border-radius: 5px;
+    width: 75%;
+    height: 50%;
+    margin-top: 5%;
+}
+
+a {
+    text-decoration: none; /* Убираем подчёркивание */
+    color: white;
+    font: small-caps bold 20px sans-serif;
+}
+
+a:hover {
+    text-decoration: underline; /* Добавляем подчёркивание */
+
+}
+
+.test {margin-left: 100px;}
+
+.login {
+    border: 4px solid red;
+    height: 450px;
+    width: 400px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+.form h2 {
+    text-align: center;
+    font: small-caps bold 24px sans-serif;
+    color: white;
+}
+.form .input-box{
+    width: 340px;
+    height: 50%;
+    border-bottom: 2px solid white;
+    margin: 30px 0;
+    position: relative;
+}
+.input-box input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    padding-right: 28px;
+    color: white;
+}
+.input-box label{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    font: small-caps bold 15px sans-serif;
+    color: white;
+}
+
+.input-box input:focus ~ label,
+.input-box input:valid ~ label{
+    top: -5px;
+}
+
+.login-button {
+    background-color: red;
+    margin-left: 50%;
+    transform: translate(-50%);
+    height: 3%;
+}
+.login-button p{
+    font: small-caps bold 20px sans-serif;
+    color: white;
+    padding: 0;
+    cursor: pointer;
+}
+.registration a{
+    font: small-caps bold 17px sans-serif;
+}
+
+.remember-password label {color: white}
+
+.chatMain {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.customFont {
+    color: white;
+    font: small-caps bold 24px sans-serif;
+}
+
+.description {
+    margin: 10%;
+    color: white;
+    font: small-caps bold 24px sans-serif;
+}
+
+.active {
+    color: darkgray;
+    text-decoration: underline;
+}
