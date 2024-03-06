@@ -11,25 +11,13 @@
 <body class="body">
 <table class="registration">
     <tr>
-        <td><a href="../html/login.html">войти</a></td>
+        <td><a href="../login">войти</a></td>
         <td>|</td>
-        <td><a href="../html/registration.html">зарегистрироваться</a></td>
+        <td><a href="../registration">зарегистрироваться</a></td>
     </tr>
 </table>
 
-<header class="header">
-    <img class="logo" src="../img/logoWF.jpg" alt="logoWF">
-    <img class="head" src="../img/logot.jpg" alt="logo">
-    <table class="menu">
-        <tr>
-            <td><a data-id="initial" href="../html/initial.html">главная</a></td>
-            <td><a href="#raskidki">раскидки</a></td>
-            <td><a data-id="chat" href="../html/chat.html">общение</a></td>
-            <td><a data-id="contacts" href="../html/contacts.html">контакты</a></td>
-        </tr>
-        <script src="../js/activeState.js"></script>
-    </table>
-</header>
+{{>header}}
 
 
 <div id="list"></div>
@@ -41,21 +29,11 @@
     </main>
 </div>
 
-<footer class="footer">
-    <section>
-        <img src="../img/mail.png"  alt="">
-        <img src="../img/vk.png"  alt="">
-        <img src="../img/tg.png"  alt="">
-    </section>
-    <section>
-        <a>wf@mail.ru</a>
-        <a href="https://vk.com/mganikhin">Maksim Ganikhin</a>
-        <a>wftg</a>
-    </section>
-</footer>
+{{>footer}}
 
+
+
+<!--     <a href="http://localhost:63342/Warface/html/tableGenerator.html?_ijt=euoni3gh5qr13knct7sfcvnkrr&_ij_reload=RELOAD_ON_SAVE">table lab5</a>-->
 <script src="../js/time.js"></script>
-<!--    <a href="http://localhost:63342/Warface/html/tableGenerator.html?_ijt=euoni3gh5qr13knct7sfcvnkrr&_ij_reload=RELOAD_ON_SAVE">table lab5</a>-->
-
 </body>
 </html>
