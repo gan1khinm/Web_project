@@ -1,6 +1,6 @@
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
-import {Message} from './message.entity';
-import { User } from './user.entity';
+import {Message} from '../message/message.entity';
+import { User } from '../user/user.entity';
 
 @Entity()
 export class Comment {
