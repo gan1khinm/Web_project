@@ -6,6 +6,4 @@ export class CreateCommentDto {
 
     @ApiProperty()
     readonly userId: number;
-
-    // Другие поля, если необходимо
 }

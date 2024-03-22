@@ -15,9 +15,8 @@ export class CommentService {
         return this.commentRepository.find();
     }
 
-    create(commentData: CreateCommentDto): Promise<Comment[]> {
-        // @ts-ignore
-        const newComment = this.commentRepository.create(commentData);
+    create(commentData: CreateCommentDto): Promise<Comment> {
+        const newComment = this.commentRepository.create(commentData as Partial<Comment>);
         return this.commentRepository.save(newComment);
     }
 

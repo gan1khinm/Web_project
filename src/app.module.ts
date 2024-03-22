@@ -40,8 +40,8 @@ import {Comment} from "./comment/comment.entity";
   controllers: [AppController, UserController, MessageController, CommentController],
   providers: [AppService,
     UserService,
-      MessageService,
-      CommentService,
+    MessageService,
+    CommentService,
     {
       provide: APP_INTERCEPTOR,
       useClass: LoggingInterceptor,

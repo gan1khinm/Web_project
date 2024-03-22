@@ -6,6 +6,4 @@ export class CreateMessageDto {
 
     @ApiProperty()
     readonly userId: number;
-
-    // Другие поля, если необходимо
 }
