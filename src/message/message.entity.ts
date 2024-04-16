@@ -2,6 +2,7 @@ import {Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn, RelationOp
 import { User } from '../user/user.entity';
 import { Comment } from '../comment/comment.entity';
 import { ApiProperty } from "@nestjs/swagger";
+import {IsNotEmpty} from "class-validator";
 
 @Entity()
 export class Message {
@@ -10,10 +11,7 @@ export class Message {
     id: number;
 
     @Column()
-    @ApiProperty()
-    title: string;
-
-    @Column()
+    @IsNotEmpty()
     @ApiProperty()
     content: string;
 

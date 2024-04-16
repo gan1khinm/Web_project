@@ -163,11 +163,11 @@ a:hover {
 
 .remember-password label {color: white}
 
-.chatMain {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
+/*.chatMain {*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    flex-direction: column;*/
+/*}*/
 
 .customFont {
     color: white;
@@ -183,4 +183,32 @@ a:hover {
 .active {
     color: darkgray;
     text-decoration: underline;
+}
+
+.chatMain {
+    background-color: black;
+    border: 3px solid red;
+    width: 60%;
+    height: 90vh;
+    display: flex;
+    flex-direction: column-reverse; /* Изменение порядка элементов на обратный */
+}
+
+.message {
+    padding: 10px;
+    margin: 5px 0;
+    word-wrap: break-word;
+    border-radius: 3px;
+    background-color: #333;
+    color: white;
+    max-width: 60%; /* Замените на нужное вам значение */
+}
+
+
+.messageInput {
+    margin-top: auto;
+    margin-left: 35%;
+    margin-bottom: 3px;
+    bottom: -5px; /* Располагаем на 5px выше нижней грани */
+    left: 0; /* Выравниваем по левому краю */
 }

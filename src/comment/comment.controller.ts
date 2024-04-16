@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Delete, Param } from "@nestjs/common";
+import {Controller, Get, Post, Body, Delete, Param, UsePipes, ValidationPipe} from "@nestjs/common";
 import { ApiTags, ApiResponse, ApiBody, ApiParam } from '@nestjs/swagger';
 import { CommentService } from './comment.service';
 import { Comment } from './comment.entity';
@@ -16,6 +16,7 @@ export class CommentController {
     }
 
     @Post()
+    @UsePipes(new ValidationPipe({ transform: true }))
     @ApiResponse({ status: 201, description: 'The comment has been successfully created.', type: Comment })
     @ApiBody({ type: CreateCommentDto })
     create(@Body() commentData: CreateCommentDto): Promise<Comment> {

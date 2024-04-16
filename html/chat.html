@@ -21,9 +21,18 @@
     </table>
 </header>
 
-<main class="chatMain">
-    <p class="customFont">Сервис временно не поддерживается</p>
+<main>
+    <div class="container">
+        <div class="chatMain" id="chatMessages">
+            <script src="../js/message.js"></script>
+            <div class="messageInput">
+                <input type="text" id="messageInput" placeholder="Введите сообщение...">
+                <button onclick="sendMessage()">Отправить</button>
+            </div>
+        </div>
+    </div>
 </main>
+
 </body>
 </html>
 

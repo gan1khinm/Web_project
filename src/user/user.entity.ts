@@ -2,6 +2,7 @@ import {Entity, PrimaryGeneratedColumn, Column, OneToMany, RelationOptions} from
 import { Message } from '../message/message.entity';
 import { Comment } from '../comment/comment.entity';
 import { ApiProperty } from "@nestjs/swagger";
+import {IsEmail, IsNotEmpty} from "class-validator";
 
 @Entity()
 export class User {
@@ -10,16 +11,15 @@ export class User {
     id: number;
 
     @Column()
+    @IsEmail()
     @ApiProperty()
     email: string;
 
     @Column()
-    @ApiProperty()
-    login: string;
+    name: string;
 
-    @Column()
-    @ApiProperty()
-    password: string;
+    // @Column()
+    // Role: Roles;
 
     @OneToMany(() => Message, message => message.messageAuthor)
     @ApiProperty({type: () => Message})

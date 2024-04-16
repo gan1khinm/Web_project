@@ -3,6 +3,9 @@ import { NestExpressApplication } from '@nestjs/platform-express';
 import { join } from 'path';
 import { AppModule } from './app.module';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
+import { ValidationPipe } from '@nestjs/common';
+import * as session from 'express-session';
+import * as passport from "passport";
 
 const hbs = require("hbs")
 
@@ -10,21 +13,32 @@ async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(
       AppModule,
   );
-  //const connection = await createConnection();
+
+  app.use(session({
+    secret: 'sassdweefeerfwvefr',
+    saveUninitialized: false,
+    resave: false,
+    cookie: {
+      maxAge: 60000,
+    }
+  }))
   app.useStaticAssets(join(__dirname, '..', 'public'));
   app.setBaseViewsDir(join(__dirname, '..', 'views', 'layouts'));
   hbs.registerPartials(join(__dirname, '..', 'views', 'partials'))
   app.setViewEngine('hbs');
 
-  const options = new DocumentBuilder() // добавлено
-      .setTitle('Your API') // добавлено
-      .setDescription('API description') // добавлено
+  const options = new DocumentBuilder()
+      .setTitle('Your API')
+      .setDescription('API description')
       .setVersion('1.0') // добавлено
-      .build(); // добавлено
-  const document = SwaggerModule.createDocument(app, options); // добавлено
-  SwaggerModule.setup('api', app, document); // добавлено
+      .build();
+  const document = SwaggerModule.createDocument(app, options);
+  SwaggerModule.setup('api', app, document);
+  app.useGlobalPipes(new ValidationPipe());
+  const port = process.env.PORT || 3000;
 
-  const port = process.env.PORT || 3000; // Порт по умолчанию 3000, если не указан в переменной окружения
+  app.use(passport.initialize());
+  app.use(passport.session());
   await app.listen(port);
 }
 
