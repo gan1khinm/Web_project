@@ -5,6 +5,7 @@
     <title>Chat</title>
     <link rel="stylesheet" type="text/css" href='../css/main.css'>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.2/socket.io.js"></script>
+    <script src="../js/showMessages.js"></script>
 </head>
 <body class="body">
 {{>header}}
@@ -13,7 +14,7 @@
     <div class="container">
         <div class="chatMain" id="chatMessages">
             <div class="messageInput">
-                <script src="../js/message.js"></script>
+                <script src="../js/sendMessage.js"></script>
                 <script src="../js/socketMessage.js"></script>
                 <input type="text" id="messageInput" placeholder="Введите сообщение...">
                 <button onclick="sendMessage()">Отправить</button>
@@ -21,7 +22,6 @@
         </div>
     </div>
 </main>
-
 
 </body>
 </html>

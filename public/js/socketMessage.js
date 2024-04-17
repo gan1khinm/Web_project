@@ -3,7 +3,6 @@ const socket = io('http://localhost:3000');
 socket.on('newMessage', (message) => {
     const messageElement = document.createElement('div');
     messageElement.classList.add('message');
-    //messageElement.textContent = message.content;
     messageElement.innerHTML = message.message.content;
 
     const deleteButton = document.createElement('button');
@@ -12,7 +11,7 @@ socket.on('newMessage', (message) => {
     messageElement.appendChild(deleteButton);
 
     deleteButton.addEventListener('click', () => {
-        deleteMessage(message.id);
+        deleteMessage(message.message.id);
         messageElement.remove();
     });
 

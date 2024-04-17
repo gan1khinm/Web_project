@@ -5,4 +5,7 @@ export class CreateMessageDto {
     @ApiProperty()
     @IsNotEmpty()
     readonly content: string;
+
+    @ApiProperty()
+    id: number;
 }

@@ -25,7 +25,6 @@ export class MessageController {
     @ApiBody({ type: CreateMessageDto })
     async create(@Body() messageData: CreateMessageDto): Promise<Message> {
         const createdMessage = await this.messageService.create(messageData);
-        //console.log(messageData.content);
         return createdMessage;
     }
 

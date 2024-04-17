@@ -18,9 +18,9 @@ export class MessageService {
 
     async create(messageData: CreateMessageDto): Promise<Message> {
         const newMessage = this.messageRepository.create(messageData as Partial<Message>);
-        //console.log(messageData.content);
-        await this.appGateway.handleMessageCreated(messageData);
-        return this.messageRepository.save(newMessage);
+        const createdMessage = await this.messageRepository.save(newMessage);
+        await this.appGateway.handleMessageCreated(createdMessage);
+        return createdMessage;
     }
 
     async delete(id: number): Promise<void> {

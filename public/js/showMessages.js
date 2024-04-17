@@ -26,4 +26,23 @@ async function displayMessages() {
     });
 }
 
+function addMessage(message) {
+    const messageElement = document.createElement('div');
+    messageElement.classList.add('message');
+    messageElement.textContent = message.content;
+
+    const deleteButton = document.createElement('button');
+    deleteButton.textContent = 'Удалить';
+    deleteButton.classList.add('deleteButton');
+    messageElement.appendChild(deleteButton);
+
+    deleteButton.addEventListener('click', () => {
+        deleteMessage(message.id);
+        messageElement.remove();
+    });
+
+    const chatMessages = document.getElementById('chatMessages');
+    chatMessages.appendChild(messageElement);
+}
+
 displayMessages();
